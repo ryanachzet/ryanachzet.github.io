@@ -11,9 +11,97 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/homepage.css">
 
+        <style>
+            .nav-menu-btn {
+                padding: 5px;
+                border: none;
+            }
+            .menu-icon {
+                display: block;
+                margin: 0 auto 5px;
+                height: 15px;
+                margin-bottom: 2px;
+                position: relative;
+                width: 15px;
+            }
+            .bar {
+                background: #000;
+                height: 2px;
+                left: 0;
+                position: absolute;
+                -webkit-transition: all 100ms linear 0s;
+                -moz-transition: all 100ms linear 0s;
+                -o-transition: all 100ms linear 0s;
+                transition: all 100ms linear 0s;
+                top: 50%;
+                width: 15px;
+            }
+            .top-bar {
+                margin-top: -4px;
+            }
+            .bottom-bar {
+                margin-top: 3px;
+            }
+            .expanded {
+                background: #ccc;
+            }
+            .expanded .top-bar {
+                margin-top: 0;
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+            .expanded .bottom-bar {
+                margin-top: 0;
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+            }
+            @media screen and (min-width: 768px) {
+                .menu-btn {
+                    display: none;
+                }
+            }
+            
+            .nav-menu {
+                overflow: hidden;
+                padding: 5px;
+                text-align: center;
+            }
+            .nav-menu ul {
+                list-style: none;
+                padding-left: 0;
+            }
+            @media screen and (max-width: 768px) {
+                .nav-menu {
+                    height: 0;
+                }
+                .nav-menu.expanded {
+                    height: auto;   
+                }
+            }
+        </style>
+
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
+        <button type="button" id="nav-menu-btn" class="nav-menu-btn" aria-haspopup="true" aria-expanded="false">
+            <span class="menu-icon"><div class="bar top-bar"></div><div class="bar bottom-bar"></div><span class="visuallyhidden">Open </span></span>Menu
+        </button>
+
+        <nav id="nav-menu" class="nav-menu">
+            <ul>
+                <li><a href="#">Sample link 1</a></li>
+                <li><a href="#">Sample link 2</a></li>
+                <li><a href="#">Sample link 3</a></li>
+                <li><a href="#">Sample link 4</a></li>
+                <li><a href="#">Sample link 5</a></li>
+            </ul>
+        </nav>
 
         <div class="row">
             <div class="col-xs-10 push-xs-1 text-center">
